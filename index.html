@@ -232,21 +232,39 @@
             background-color: #e5e5e5;
         }
         
-        /* Scrollable playlist container */
+        /* Scrollable playlist container - FIXED HEIGHT */
         .playlist-container {
-            height: 400px;
+            height: 500px;
             overflow-y: auto;
+        }
+        
+        @media (max-height: 900px) {
+            .playlist-container {
+                height: 450px;
+            }
         }
         
         @media (max-height: 800px) {
             .playlist-container {
-                height: 300px;
+                height: 400px;
+            }
+        }
+        
+        @media (max-height: 700px) {
+            .playlist-container {
+                height: 350px;
             }
         }
         
         @media (max-height: 600px) {
             .playlist-container {
-                height: 250px;
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .playlist-container {
+                height: 400px;
             }
         }
     </style>
@@ -353,7 +371,7 @@
                     <p class="text-center text-sm text-gray-500 mt-1">49 tracks • 3h 42m</p>
                 </div>
                 
-                <!-- Scrollable Playlist Container -->
+                <!-- Scrollable Playlist Container - FIXED HEIGHT -->
                 <div class="playlist-container custom-scrollbar">
                     <ol id="playlist" class="divide-y divide-gray-800">
                         <!-- Playlist items will be populated by JavaScript -->
@@ -440,24 +458,24 @@
                 { href: "26-Ry_Frank_Wiedemann_?me-Howling_?me_Remix_feat_?me.mp3", artist: "Ry, Frank Wiedemann, ?me", title: "Howling (?me Remix) (feat. ?me)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "27-Benny_Benassi_Gary_Go-Cinema_Skrillex_Remix_feat_Gary_Go.mp3", artist: "Benny Benassi, Gary Go", title: "Cinema (Skrillex Remix) (feat. Gary Go)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "28-Galantis-Gold_Dust.mp3", artist: "Galantis", title: "Gold Dust", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                { href: "29-Seven_Lions_Fiora-Days_to_Come_feat_Fiora.mp3", artist: "Seven Lions, Fiora", title: "Days to Come (feat. Fiora)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                { href: "30-Porter_Robinson-Language_UK_Edit.mp3", artist: "Porter Robinson", title: "Language (UK Edit)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "29-Seven_Lions_Fiora-Days_to_Come_feat_Fiora.mp3", artist: "Seven Lions, Fiora", title: "Days to Come (feat. Fiora)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "30-Porter_Robinson-Language_UK_Edit.mp3", artist: "Porter Robinson", title: "Language (UK Edit)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "31-Marvin_Gaye_Kygo-Sexual_Healing_Kygo_Remix.mp3", artist: "Marvin Gaye, Kygo", title: "Sexual Healing (Kygo Remix)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                { href: "32-Duke_Dumont_Jax_Jones-I_Got_U_feat_Jax_Jones.mp3", artist: "Duke Dumont, Jax Jones", title: "I Got U (feat. Jax Jones)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "32-Duke_Dumont_Jax_Jones-I_Got_U_feat_Jax_Jones.mp3", artist: "Duke Dumont, Jax Jones", title: "I Got U (feat. Jax Jones)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "33-Gorgon_City_MNEK-Ready_For_Your_Love_feat_MNEK.mp3", artist: "Gorgon City, MNEK", title: "Ready For Your Love (feat. MNEK)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "34-HOT_NATURED-Benediction.mp3", artist: "HOT NATURED", title: "Benediction", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                { href: "35-Oliver_Heldens_Becky_Hill-Gecko_Overdrive_Radio_Edit.mp3", artist: "Oliver Heldens, Becky Hill", title: "Gecko (Overdrive) (Radio Edit)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "35-Oliver_Heldens_Becky_Hill-Gecko_Overdrive_Radio_Edit.mp3", artist: "Oliver Heldens, Becky Hill", title: "Gecko (Overdrive) (Radio Edit)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "36-Tim_Berg-Seek_Bromance.mp3", artist: "Tim Berg", title: "Seek Bromance", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "37-Ti?sto_Sneaky_Sound_System-I_Will_Be_Here_Wolfgang_Gartner_Remix.mp3", artist: "Ti?sto, Sneaky Sound System", title: "I Will Be Here (Wolfgang Gartner Remix)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                { href: "38-Above_&_Beyond_feat_Richard_Bedford-Thing_Called_Love_Above_&_Beyond_2011_Club_Mix.mp3", artist: "Above & Beyond feat. Richard Bedford", title: "Thing Called Love (Above & Beyond 2011 Club Mix)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "38-Above_&_Beyond_feat_Richard_Bedford-Thing_Called_Love_Above_&_Beyond_2011_Club_Mix.mp3", artist: "Above & Beyond feat. Richard Bedford", title: "Thing Called Love (Above & Beyond 2011 Club Mix)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "39-Late_Night_Alumni-Empty_Streets.mp3", artist: "Late Night Alumni", title: "Empty Streets", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "40-Magnetic_Man_Angela_Hunte-I_Need_Air_feat_Angela_Hunte.mp3", artist: "Magnetic Man, Angela Hunte", title: "I Need Air (feat. Angela Hunte)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                { href: "41-Gareth_Emery_featuring_Lucy_Saunders-Sanctuary_Club_Mix.mp3", artist: "Gareth Emery featuring Lucy Saunders", title: "Sanctuary (Club Mix)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "41-Gareth_Emery_featuring_Lucy_Saunders-Sanctuary_Club_Mix.mp3", artist: "Gareth Emery featuring Lucy Saunders", title: "Sanctuary (Club Mix)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "42-Nadia_Ali-Rapture_Avicii_New_Generation_Radio_Edit.mp3", artist: "Nadia Ali", title: "Rapture (Avicii New Generation Radio Edit)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                { href: "43-Alison_Wonderland-I_Want_U.mp3", artist: "Alison Wonderland", title: "I Want U", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "43-Alison_Wonderland-I_Want_U.mp3", artist: "Alison Wonderland", title: "I Want U", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "44-Duke_Dumont-The_Giver_Reprise.mp3", artist: "Duke Dumont", title: "The Giver (Reprise)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "45-Major_Lazer_Wild_Belle-Be_Together_feat_Wild_Belle.mp3", artist: "Major Lazer, Wild Belle", title: "Be Together (feat. Wild Belle)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                { href: "46-Fedde_Le_Grand-So_Much_Love_Radio_Edit.mp3", artist: "Fedde Le Grand", title: "So Much Love (Radio Edit)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "46-Fedde_Le_Grand-So_Much_Love_Radio_Edit.mp3", artist: "Fedde Le Grand", title: "So Much Love (Radio Edit)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "47-Third_Party_vs_Cicada-Feel.mp3", artist: "Third Party vs. Cicada", title: "Feel", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "48-Kaskade_Ti?sto_Haley-Only_You_feat_Ti?sto_&_Haley.mp3", artist: "Kaskade, Ti?sto, Haley", title: "Only You (feat. Ti?sto & Haley)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "49-Filo_&_Peri_feat_Audrey_Gallagher-This_Night.mp3", artist: "Filo & Peri feat. Audrey Gallagher", title: "This Night", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" }
