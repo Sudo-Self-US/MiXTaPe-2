@@ -276,7 +276,7 @@
             </h1>
             
             <h2 class="text-lg md:text-2xl font-semibold rainbow-text mb-4 md:mb-6 tracking-wider">
-               ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı
+               ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı
             </h2>
         </div>
 
@@ -293,7 +293,7 @@
                         </div>
                         <div class="flex-1 text-center md:text-left">
                             <h3 class="text-sm font-semibold text-gray-300 mb-1">NOW PLAYING</h3>
-                            <div id="nowPlaying" class="text-xl md:text-2xl font-bold mb-2"><a href="https://github.com/Sudo-Self-US/edm-49">edm 49</a></div>
+                            <div id="nowPlaying" class="text-xl md:text-2xl font-bold mb-2"><a href="https://github.com/Sudo-Self-US/edm-49" class="hover:text-edm-purple transition-colors">edm 49</a></div>
                             <div id="trackInfo" class="text-gray-300">Select a track to begin</div>
                         </div>
                     </div>
@@ -303,7 +303,7 @@
                 <div class="p-4 md:p-6">
                     <div class="mb-4">
                         <audio id="player" preload="auto" controls class="custom-audio-player">
-                            <source src="01-Daft_Punk-Digital_Love.mp3" type="audio/mpeg">
+                            <source src="" type="audio/mpeg" id="audioSource">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
@@ -366,7 +366,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Theme toggle functionality - FIXED
+            // Theme toggle functionality
             const themeToggle = document.getElementById('themeToggle');
             const sunIcon = document.getElementById('sunIcon');
             const moonIcon = document.getElementById('moonIcon');
@@ -410,7 +410,7 @@
                 }
             }
             
-            // Playlist data with album art
+            // Playlist data with album art - ALL 49 TRACKS INCLUDED
             const tracks = [
                 { href: "01-Daft_Punk-Digital_Love.mp3", artist: "Daft Punk", title: "Digital Love", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "02-Deadmau5_&_Kaskade-I_Remember_Radio_Edit.mp3", artist: "Deadmau5 & Kaskade", title: "I Remember (Radio Edit)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
@@ -432,7 +432,35 @@
                 { href: "18-ZEDD_Matthew_Koma-Spectrum_feat_Matthew_Koma.mp3", artist: "ZEDD, Matthew Koma", title: "Spectrum (feat. Matthew Koma)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "19-Nadia_Ali_Starkillers_Alex_Kenji-Pressure_feat_Starkillers_&_Alex_Kenji_Alesso_UK_Radio_Edit.mp3", artist: "Nadia Ali, Starkillers, Alex Kenji", title: "Pressure (feat. Starkillers & Alex Kenji) (Alesso UK Radio Edit)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
                 { href: "20-Alex_Gaudino-Im_In_Love_I_Wanna_Do_It_Vocal_Edit.mp3", artist: "Alex Gaudino", title: "I'm In Love (I Wanna Do It) (Vocal Edit)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
-                // Add more tracks as needed...
+                { href: "21-Calvin_Harris-Feel_So_Close_Radio_Edit.mp3", artist: "Calvin Harris", title: "Feel So Close (Radio Edit)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "22-Fatboy_Slim-Praise_You_Radio_Edit.mp3", artist: "Fatboy Slim", title: "Praise You (Radio Edit)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "23-The_Chemical_Brothers-Snow.mp3", artist: "The Chemical Brothers", title: "Snow", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "24-Armin_van_Buuren_Laura_V-Drowning_Avici_Radio_Edit_feat_Laura_V.mp3", artist: "Armin van Buuren, Laura V", title: "Drowning (Avici Radio Edit) (feat. Laura V)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "25-Calvin_Harris_Ellie_Goulding-I_Need_Your_Love_feat_Ellie_Goulding.mp3", artist: "Calvin Harris, Ellie Goulding", title: "I Need Your Love (feat. Ellie Goulding)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "26-Ry_Frank_Wiedemann_?me-Howling_?me_Remix_feat_?me.mp3", artist: "Ry, Frank Wiedemann, ?me", title: "Howling (?me Remix) (feat. ?me)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "27-Benny_Benassi_Gary_Go-Cinema_Skrillex_Remix_feat_Gary_Go.mp3", artist: "Benny Benassi, Gary Go", title: "Cinema (Skrillex Remix) (feat. Gary Go)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "28-Galantis-Gold_Dust.mp3", artist: "Galantis", title: "Gold Dust", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "29-Seven_Lions_Fiora-Days_to_Come_feat_Fiora.mp3", artist: "Seven Lions, Fiora", title: "Days to Come (feat. Fiora)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "30-Porter_Robinson-Language_UK_Edit.mp3", artist: "Porter Robinson", title: "Language (UK Edit)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "31-Marvin_Gaye_Kygo-Sexual_Healing_Kygo_Remix.mp3", artist: "Marvin Gaye, Kygo", title: "Sexual Healing (Kygo Remix)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "32-Duke_Dumont_Jax_Jones-I_Got_U_feat_Jax_Jones.mp3", artist: "Duke Dumont, Jax Jones", title: "I Got U (feat. Jax Jones)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "33-Gorgon_City_MNEK-Ready_For_Your_Love_feat_MNEK.mp3", artist: "Gorgon City, MNEK", title: "Ready For Your Love (feat. MNEK)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "34-HOT_NATURED-Benediction.mp3", artist: "HOT NATURED", title: "Benediction", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "35-Oliver_Heldens_Becky_Hill-Gecko_Overdrive_Radio_Edit.mp3", artist: "Oliver Heldens, Becky Hill", title: "Gecko (Overdrive) (Radio Edit)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "36-Tim_Berg-Seek_Bromance.mp3", artist: "Tim Berg", title: "Seek Bromance", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "37-Ti?sto_Sneaky_Sound_System-I_Will_Be_Here_Wolfgang_Gartner_Remix.mp3", artist: "Ti?sto, Sneaky Sound System", title: "I Will Be Here (Wolfgang Gartner Remix)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "38-Above_&_Beyond_feat_Richard_Bedford-Thing_Called_Love_Above_&_Beyond_2011_Club_Mix.mp3", artist: "Above & Beyond feat. Richard Bedford", title: "Thing Called Love (Above & Beyond 2011 Club Mix)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "39-Late_Night_Alumni-Empty_Streets.mp3", artist: "Late Night Alumni", title: "Empty Streets", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "40-Magnetic_Man_Angela_Hunte-I_Need_Air_feat_Angela_Hunte.mp3", artist: "Magnetic Man, Angela Hunte", title: "I Need Air (feat. Angela Hunte)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "41-Gareth_Emery_featuring_Lucy_Saunders-Sanctuary_Club_Mix.mp3", artist: "Gareth Emery featuring Lucy Saunders", title: "Sanctuary (Club Mix)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "42-Nadia_Ali-Rapture_Avicii_New_Generation_Radio_Edit.mp3", artist: "Nadia Ali", title: "Rapture (Avicii New Generation Radio Edit)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "43-Alison_Wonderland-I_Want_U.mp3", artist: "Alison Wonderland", title: "I Want U", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "44-Duke_Dumont-The_Giver_Reprise.mp3", artist: "Duke Dumont", title: "The Giver (Reprise)", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "45-Major_Lazer_Wild_Belle-Be_Together_feat_Wild_Belle.mp3", artist: "Major Lazer, Wild Belle", title: "Be Together (feat. Wild Belle)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "46-Fedde_Le_Grand-So_Much_Love_Radio_Edit.mp3", artist: "Fedde Le Grand", title: "So Much Love (Radio Edit)", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "47-Third_Party_vs_Cicada-Feel.mp3", artist: "Third Party vs. Cicada", title: "Feel", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "48-Kaskade_Ti?sto_Haley-Only_You_feat_Ti?sto_&_Haley.mp3", artist: "Kaskade, Ti?sto, Haley", title: "Only You (feat. Ti?sto & Haley)", art: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" },
+                { href: "49-Filo_&_Peri_feat_Audrey_Gallagher-This_Night.mp3", artist: "Filo & Peri feat. Audrey Gallagher", title: "This Night", art: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" }
             ];
 
             // Populate playlist
@@ -466,6 +494,7 @@
             // Player functionality
             let current = 0;
             const $audio = $('#player');
+            const $audioSource = $('#audioSource');
             const $tracks = $('.track');
             const len = $tracks.length;
             const $nowPlaying = $('#nowPlaying');
@@ -592,11 +621,17 @@
             }
 
             function play($link, $player) {
-                $player.src = $link.data('href');
+                $audioSource.attr('src', $link.data('href'));
                 const par = $link.parent();
                 par.addClass('active-track').siblings().removeClass('active-track');
                 $player.load();
-                $player.play();
+                $player.play().catch(function(error) {
+                    console.log("Play failed:", error);
+                    // Fallback: try to play after user interaction
+                    $playPause.one('click', function() {
+                        $player.play();
+                    });
+                });
                 setTrackMetadata($link);
             }
 
